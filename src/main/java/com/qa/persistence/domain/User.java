@@ -45,21 +45,14 @@ public class User {
 		this.userID = userID;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getuserName() {
+		return userName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setuserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getSecondName() {
-		return secondName;
-	}
-
-	public void setSecondName(String secondName) {
-		this.secondName = secondName;
-	}
 
 	public List<Route> getRoutes() {
 		return routes;

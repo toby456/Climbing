@@ -26,8 +26,8 @@ public class Route {
 	private String difficulty;
 	@Column(name = "location", length = 200)
 	private String location;
-	@Column(name = "type_Of_Climb")
-	private int typeOfClimb;
+	@Column(name = "type_Of_Climb", length = 50)
+	private String typeOfClimb;
 	@Column(name = "climb_Description", length = 200)
 	private String climbDescription;
 	@Column(name = "crux_1", length = 150)
@@ -41,7 +41,7 @@ public class Route {
 	public Route() {
 	}
 
-	public Route(int climbStatus, String routeName, String difficulty, String location, int typeOfClimb,
+	public Route(int climbStatus, String routeName, String difficulty, String location, String typeOfClimb,
 			String climbDescription, String crux1, String crux2, long userID) {
 		this.climbStatus = climbStatus;
 		this.routeName = routeName;
@@ -94,11 +94,11 @@ public class Route {
 		this.location = location;
 	}
 
-	public int getTypeOfClimb() {
+	public String getTypeOfClimb() {
 		return typeOfClimb;
 	}
 
-	public void setTypeOfClimb(int typeOfClimb) {
+	public void setTypeOfClimb(String typeOfClimb) {
 		this.typeOfClimb = typeOfClimb;
 	}
 
