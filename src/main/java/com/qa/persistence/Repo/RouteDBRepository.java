@@ -28,6 +28,11 @@ public class RouteDBRepository {
 		Collection<Route> classroom = (Collection<Route>) query.getResultList();
 		return jsonOb.getJSONForObject(classroom);
 	}
+	
+	public String getRoute(long id) {
+		Route routeInDB = findRoute(id);
+		return jsonOb.getJSONForObject(routeInDB);
+	}
 
 	@Transactional(REQUIRED)
 	public String createRoute(String route) {
