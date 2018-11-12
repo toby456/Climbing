@@ -1,6 +1,9 @@
 package com.qa.persistence.Repo;
 
 import javax.inject.Inject;
+
+import static javax.transaction.Transactional.TxType.REQUIRED;
+import static javax.transaction.Transactional.TxType.SUPPORTS;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -28,16 +31,11 @@ public class UserDBRepository{
 		manager.persist(aUser);
 		return "{\"message\": \"A user has been sucessfully created\"}";
 	}
-
-	
-
-	public String getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	private User findUser(long id) {
 		return manager.find(User.class, id);
 	}
+	
+	
 
 }
