@@ -10,6 +10,12 @@ public class UserServiceImpl implements UserService {
 
 	@Inject
 	private UserDBRepository repo;
+	
+	@Override
+	public String getAllUsers() {
+		return repo.getAllUsers();
+		
+	}
 
 	@Override
 	public String createUser(String user) {

@@ -24,9 +24,9 @@ public class RouteDBRepository {
 	private JSONUtil jsonOb;
 
 	public String getAllRoutes() {
-		Query query = manager.createQuery("SELECT a FROM Classroom a");
-		Collection<Route> classroom = (Collection<Route>) query.getResultList();
-		return jsonOb.getJSONForObject(classroom);
+		Query query = manager.createQuery("SELECT a FROM Route a");
+		Collection<Route> route = (Collection<Route>) query.getResultList();
+		return jsonOb.getJSONForObject(route);
 	}
 	
 	public String getRoute(long id) {
@@ -38,13 +38,13 @@ public class RouteDBRepository {
 	public String createRoute(String route) {
 		Route aRoute = jsonOb.getObjectForJSON(route, Route.class);
 		manager.persist(aRoute);
-		return "{\"message\": \"A user has been sucessfully created\"}";
+		return "{\"message\": \"A route has been sucessfully created\"}";
 	}
 
 	@Transactional(REQUIRED)
 	public String updateRoute(String routeToUpdate) {
 		Route updatedRoute = jsonOb.getObjectForJSON(routeToUpdate, Route.class);
-		Route routeFromDB = findRoute(updatedRoute.getRouteID());
+		Route routeFromDB = findRoute(updatedRoute.getID());
 		if (routeFromDB != null) {
 			manager.merge(updatedRoute);
 			return "{\"message\": \"Route sucessfully updated\"}";

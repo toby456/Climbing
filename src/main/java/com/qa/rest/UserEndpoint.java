@@ -16,6 +16,13 @@ public class UserEndpoint {
 
 	@Inject
 	private UserService users;
+	
+	@Path("/getAllUsers")
+	@GET
+	@Produces({ "application/json" })
+	public String getAllUsers() {
+		return users.getAllUsers();
+	}
 
 	@Path("/createUser")
 	@POST

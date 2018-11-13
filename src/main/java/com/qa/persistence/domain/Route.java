@@ -10,39 +10,39 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Route")
 public class Route {
 
-	@Column(name = "climb_Status")
+	@Column(name = "climbStatus")
 	private int climbStatus;
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	@Column(name = "route_ID")
-	private Long routeID;
-	@Column(name = "route_Name", length = 50)
+	private Long ID;
+	@Column(name = "routeName", length = 50)
 	private String routeName;
 	@Column(name = "difficulty", length = 20)
 	private String difficulty;
 	@Column(name = "location", length = 200)
 	private String location;
-	@Column(name = "type_Of_Climb", length = 50)
+	@Column(name = "typeOfClimb", length = 50)
 	private String typeOfClimb;
-	@Column(name = "climb_Description", length = 200)
+	@Column(name = "climbDescription", length = 200)
 	private String climbDescription;
-	@Column(name = "crux_1", length = 150)
+	@Column(name = "crux1", length = 150)
 	private String crux1;
-	@Column(name = "crux_2", length = 150)
+	@Column(name = "crux2", length = 150)
 	private String crux2;
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "user_ID")
-	private long userID;
+	@JoinColumn(name = "userID")
+	private Long userID;
 
 	public Route() {
 	}
 
 	public Route(int climbStatus, String routeName, String difficulty, String location, String typeOfClimb,
-			String climbDescription, String crux1, String crux2, long userID) {
+			String climbDescription, String crux1, String crux2, Long userID) {
 		this.climbStatus = climbStatus;
 		this.routeName = routeName;
 		this.difficulty = difficulty;
@@ -53,6 +53,16 @@ public class Route {
 		this.crux2 = crux2;
 		this.userID = userID;
 	}
+	
+	
+
+	public Long getID() {
+		return ID;
+	}
+
+	public void setID(Long iD) {
+		ID = iD;
+	}
 
 	public int getClimbStatus() {
 		return climbStatus;
@@ -62,12 +72,8 @@ public class Route {
 		this.climbStatus = climbStatus;
 	}
 
-	public Long getRouteID() {
-		return routeID;
-	}
-
-	public void setRouteID(Long routeID) {
-		this.routeID = routeID;
+	public void setUserID(Long userID) {
+		this.userID = userID;
 	}
 
 	public String getRouteName() {
@@ -136,7 +142,7 @@ public class Route {
 
 	@Override
 	public String toString() {
-		return "Route [Climb status=" + climbStatus + ", route ID =" + routeID + ", Route name =" + routeName
+		return "Route [Climb status=" + climbStatus + ", ID =" + ID + ", Route name =" + routeName
 				+ ", Difficulty =" + difficulty + ", Location = " + location + ", Type of Climb = " + typeOfClimb
 				+ ", Climb Description = " + climbDescription + ", Crux 1 = " + crux1 + ", Crux 2 = " + crux2
 				+ ", User ID = " + userID + "]";
