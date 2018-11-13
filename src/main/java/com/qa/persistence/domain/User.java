@@ -23,8 +23,6 @@ public class User {
 	private Long userID;
 	@Column(name = "user_Name", length = 20)
 	private String userName;
-	@Column(name = "second_Name", length = 50)
-	private String secondName;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "trainee_ID", referencedColumnName = "trainee_ID")
 	private List<Route> routes = new ArrayList<>();
