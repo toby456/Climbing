@@ -31,10 +31,8 @@ public class Route {
 	private String typeOfClimb;
 	@Column(name = "climbDescription", length = 200)
 	private String climbDescription;
-	@Column(name = "crux1", length = 150)
-	private String crux1;
-	@Column(name = "crux2", length = 150)
-	private String crux2;
+	@Column(name = "crux", length = 150)
+	private String crux;
 	@JoinColumn(name = "userID")
 	private Long userID;
 
@@ -42,15 +40,14 @@ public class Route {
 	}
 
 	public Route(int climbStatus, String routeName, String difficulty, String location, String typeOfClimb,
-			String climbDescription, String crux1, String crux2, Long userID) {
+			String climbDescription, String crux, Long userID) {
 		this.climbStatus = climbStatus;
 		this.routeName = routeName;
 		this.difficulty = difficulty;
 		this.location = location;
 		this.typeOfClimb = typeOfClimb;
 		this.climbDescription = climbDescription;
-		this.crux1 = crux1;
-		this.crux2 = crux2;
+		this.crux = crux;
 		this.userID = userID;
 	}
 	
@@ -116,21 +113,14 @@ public class Route {
 		this.climbDescription = climbDescription;
 	}
 
-	public String getCrux1() {
-		return crux1;
+	public String getCrux() {
+		return crux;
 	}
 
-	public void setCrux1(String crux1) {
-		this.crux1 = crux1;
+	public void setCrux(String crux1) {
+		this.crux = crux1;
 	}
 
-	public String getCrux2() {
-		return crux2;
-	}
-
-	public void setCrux2(String crux2) {
-		this.crux2 = crux2;
-	}
 
 	public long getUserID() {
 		return userID;
@@ -144,7 +134,7 @@ public class Route {
 	public String toString() {
 		return "Route [Climb status=" + climbStatus + ", ID =" + ID + ", Route name =" + routeName
 				+ ", Difficulty =" + difficulty + ", Location = " + location + ", Type of Climb = " + typeOfClimb
-				+ ", Climb Description = " + climbDescription + ", Crux 1 = " + crux1 + ", Crux 2 = " + crux2
+				+ ", Climb Description = " + climbDescription + ", Crux = " + crux
 				+ ", User ID = " + userID + "]";
 
 	}
