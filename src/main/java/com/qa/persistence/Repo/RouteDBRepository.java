@@ -44,7 +44,7 @@ public class RouteDBRepository {
 	@Transactional(REQUIRED)
 	public String updateRoute(String routeToUpdate) {
 		Route updatedRoute = jsonOb.getObjectForJSON(routeToUpdate, Route.class);
-		Route routeFromDB = findRoute(updatedRoute.getID());
+		Route routeFromDB = findRoute(updatedRoute.getrouteID());
 		if (routeFromDB != null) {
 			manager.merge(updatedRoute);
 			return "{\"message\": \"Route sucessfully updated\"}";

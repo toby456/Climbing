@@ -17,10 +17,10 @@ import javax.persistence.Table;
 public class Route {
 
 	@Column(name = "climbStatus")
-	private int climbStatus;
+	private String climbStatus;
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	private Long ID;
+	private Long routeID;
 	@Column(name = "routeName", length = 50)
 	private String routeName;
 	@Column(name = "difficulty", length = 20)
@@ -39,7 +39,7 @@ public class Route {
 	public Route() {
 	}
 
-	public Route(int climbStatus, String routeName, String difficulty, String location, String typeOfClimb,
+	public Route(String climbStatus, String routeName, String difficulty, String location, String typeOfClimb,
 			String climbDescription, String crux, Long userID) {
 		this.climbStatus = climbStatus;
 		this.routeName = routeName;
@@ -53,19 +53,19 @@ public class Route {
 	
 	
 
-	public Long getID() {
-		return ID;
+	public Long getrouteID() {
+		return routeID;
 	}
 
-	public void setID(Long iD) {
-		ID = iD;
+	public void setrouteID(Long iD) {
+		routeID = routeID;
 	}
 
-	public int getClimbStatus() {
+	public String getClimbStatus() {
 		return climbStatus;
 	}
 
-	public void setClimbStatus(int climbStatus) {
+	public void setClimbStatus(String climbStatus) {
 		this.climbStatus = climbStatus;
 	}
 
@@ -132,7 +132,7 @@ public class Route {
 
 	@Override
 	public String toString() {
-		return "Route [Climb status=" + climbStatus + ", ID =" + ID + ", Route name =" + routeName
+		return "Route [Climb status=" + climbStatus + ", ID =" + routeID + ", Route name =" + routeName
 				+ ", Difficulty =" + difficulty + ", Location = " + location + ", Type of Climb = " + typeOfClimb
 				+ ", Climb Description = " + climbDescription + ", Crux = " + crux
 				+ ", User ID = " + userID + "]";
