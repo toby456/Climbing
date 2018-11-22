@@ -58,13 +58,31 @@ public class RouteDBRepository {
 		Route RouteInDB = findRoute(id);
 		if (RouteInDB != null) {
 			manager.remove(RouteInDB);
-			return "Route " + id + " has been removed";
+			return "{\"message\": \"Route sucessfully deleted\"}";
 		} else
-			return "Route not found";
+			return "{\"message\": \"Route not found\"}" ;
+	}
+
+	public EntityManager getManager() {
+		return manager;
+	}
+
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+
+	public JSONUtil getJsonOb() {
+		return jsonOb;
+	}
+
+	public void setJsonOb(JSONUtil jsonOb) {
+		this.jsonOb = jsonOb;
 	}
 
 	private Route findRoute(long id) {
 		return manager.find(Route.class, id);
 	}
+	
+	
 
 }
