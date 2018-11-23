@@ -17,9 +17,11 @@
         <version.war.plugin>3.0.0</version.war.plugin>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
- <dependencyManagement>
+ 	<dependencyManagement>
       <dependencies>
           <dependency>
               <groupId>org.wildfly.bom</groupId>
@@ -28,11 +30,18 @@
               <type>pom</type>
               <scope>import</scope>
           </dependency>
-        </dependencies>
+          </dependencies>               
     </dependencyManagement>
     
     <dependencies>
-      <dependency>
+    
+    	<dependency>
+	        <groupId>org.mockito</groupId>
+	        <artifactId>mockito-all</artifactId>
+	        <version>1.9.5</version>
+    	</dependency>
+    	
+      	<dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
             <scope>provided</scope>
