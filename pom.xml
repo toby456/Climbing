@@ -22,18 +22,34 @@
   </properties>
   
  	<dependencyManagement>
-      <dependencies>
-          <dependency>
+      <dependencies>             	
+         <dependency>
               <groupId>org.wildfly.bom</groupId>
               <artifactId>wildfly-javaee7-with-tools</artifactId>
               <version>${version.jboss.bom}</version>
               <type>pom</type>
               <scope>import</scope>
           </dependency>
-          </dependencies>               
+        </dependencies>               
     </dependencyManagement>
     
     <dependencies>
+    
+    	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+    		<groupId>org.seleniumhq.selenium</groupId>
+   		 	<artifactId>selenium-java</artifactId>
+   		 	<version>3.11.0</version>
+		</dependency>
+  
+  
+  		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+    		<groupId>junit</groupId>
+    		<artifactId>junit</artifactId>
+   			 <version>4.12</version>
+ 			<!--   <scope>test</scope> -->
+		</dependency>
     
     	<dependency>
 	        <groupId>org.mockito</groupId>
