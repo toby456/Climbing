@@ -33,9 +33,8 @@ public class User {
 	public User() {
 	}
 
-	public User(String username, Set<Route> routes) {
+	public User(String username) {
 		this.userName = username;
-		this.routes = routes;
 	}
 
 	public String getUserName() {
