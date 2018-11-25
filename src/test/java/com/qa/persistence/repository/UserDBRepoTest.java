@@ -1,4 +1,4 @@
-package com.qa.persistence.integration;
+package com.qa.persistence.repository;
 
 import java.util.ArrayList;
 import java.util.List;
