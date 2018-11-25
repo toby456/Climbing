@@ -41,8 +41,7 @@ public class RouteDBRepoTest {
 
 	@Before
 	public void setup() {
-		repo.setManager(manager);
-		;
+		repo.setManager(manager);		
 		JsonOb = new JSONUtil();
 		repo.setJsonOb(JsonOb);
 	}

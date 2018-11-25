@@ -45,6 +45,26 @@ public class UserDBRepository{
 	private User findUser(long id) {
 		return manager.find(User.class, id);
 	}
+
+
+	public EntityManager getManager() {
+		return manager;
+	}
+
+
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+
+
+	public JSONUtil getJsonOb() {
+		return jsonOb;
+	}
+
+
+	public void setJsonOb(JSONUtil jsonOb) {
+		this.jsonOb = jsonOb;
+	}
 	
 	
 
