@@ -68,12 +68,5 @@ public class RouteDBRepoTest {
 		Assert.assertEquals("{\"message\": \"Route sucessfully deleted\"}", repo.deleteRoute(1l));
 	}
 	
-	/*@Test
-	public void testUpdateRoute() {
-		Route route = new Route("Progress", "red", "v6", "depot", "boulder", "hard", "2nd move", 1l);
-		Mockito.when(manager.find(Route.class, 1l)).thenReturn(route);
-		Mockito.when(manager.merge(MOCK_UPDATE)).thenReturn("{\"message\": \"Route sucessfully updated\"}");
-		Assert.assertEquals("{\"message\": \"Route sucessfully updated\"}", repo.updateRoute(MOCK_UPDATE));
-	}*/
 
 }
